@@ -8273,6 +8273,12 @@ static const struct cpumask *adjust_cpumask(struct task_struct *p,
 	/* Force all performance-critical kthreads onto the big cluster */
 	if (p->flags & PF_PERF_CRITICAL)
 		return cpu_perf_mask;
+
+ 	/* Force all trivial, unbound kthreads onto the little cluster */
+	if (p->flags & PF_KTHREAD && !is_global_init(p) &&
+	    cpumask_equal(req_mask, cpu_all_mask))
+		return cpu_lp_mask;
+
 	return req_mask;
 }
 
