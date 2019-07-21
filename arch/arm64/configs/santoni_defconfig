@@ -38,7 +38,7 @@ CONFIG_BIG_CPU_MASK=15
 # CONFIG_NFC_NQ is not set
 ######################################
 
-CONFIG_LOCALVERSION="-LITstaff"
+CONFIG_LOCALVERSION="-Divine-staff"
 CONFIG_LOCALVERSION_AUTO=n
 # CONFIG_USELIB is not set
 CONFIG_AUDIT=y
